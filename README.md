@@ -1,2 +1,1 @@
-# trying_github_actions_google_sheets_api
-Repo to try using Google Sheets API with GitHub Actions
+Repo to try using Google Sheets API with GitHub Actions. I'm exploring this for one of my projects at Research Computing and Data Services.
