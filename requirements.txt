@@ -1,6 +1,3 @@
-os
-json
-datetime
 google-auth
 google-auth-oauthlib
 google-auth-httplib2
