@@ -29,8 +29,15 @@ jobs:
         echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > credentials.json
         python script.py
         
-    - name: Upload data folder
-      uses: actions/upload-artifact@v3
-      with:
-        name: data
-        path: data/rows_*.txt
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+
+    - name: Commit and Push changes
+      run: |
+        git add data/*.txt
+        git commit -m "Add generated data files"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
