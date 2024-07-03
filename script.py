@@ -16,6 +16,9 @@ service = build("sheets", "v4", credentials=creds)
 result = service.spreadsheets().values().get(spreadsheetId="176xIIin9KdZzD4ZZVKdMEj3V3uUUoDHHKg6z7zXjnqo", range="A1:A10").execute()
 rows = result.get("values", [])
 
+# Get current datetime and format it
+current_datetime = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+
 # Create the .txt file with the current datetime in 'data' folder
 file_path = f"data/rows_{current_datetime}.txt"
 with open(file_path, 'w') as file:
