@@ -30,3 +30,9 @@ jobs:
       run: |
         echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > credentials.json
         python script.py
+        
+    - name: Upload data folder
+      uses: actions/upload-artifact@v3
+      with:
+        name: data
+        path: data/
